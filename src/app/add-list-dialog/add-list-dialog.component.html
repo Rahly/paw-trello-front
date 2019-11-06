@@ -1,0 +1,9 @@
+<h2 mat-dialog-ttile>Add list name:</h2>
+
+<mat-dialog-content>
+    <input (input)="listName=$event.target.value" type="text" class="form-control">
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button (click)="save()" class="button">Create List</button> 
+</mat-dialog-actions>

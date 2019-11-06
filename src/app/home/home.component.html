@@ -1,0 +1,9 @@
+<button (click)="openDialog()">Create new board</button>
+
+<div id="content">
+            <a routerLink="/board"><button class="contentInside" *ngFor="let divData of dataSource" >My board</button></a>
+            <app-add-board-dialog (messageEvent)="receiveMessage($event)"></app-add-board-dialog>
+</div>
+
+
+
