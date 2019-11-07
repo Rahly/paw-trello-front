@@ -5,7 +5,7 @@
 <div class="board-wrapper">
         <div class="board-columns" (boardData)="eventEmitterMessage($event)" >
             <a class="board-column" routerLink="/board" *ngFor="let divData of listsName"><h4> {{divData}}</h4></a>
-            <button class="board-add-column" >Create new list</button>
+            <button class="board-add-column" (click)="openDialog()">Create new list</button>
         </div>
 </div>
 

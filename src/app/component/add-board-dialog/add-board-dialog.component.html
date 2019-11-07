@@ -1,9 +1,9 @@
 <h2 mat-dialog-ttile>Add board name:</h2>
 
 <mat-dialog-content>
-    <input (input)="boardName=$event.target.value" type="text" class="form-control">
+    <input #boardTitle type="text" class="form-control">
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button (click)="save()" class="button">Create Board {{boardName}}</button> 
+    <button (click)=sendMessage(boardTitle.value) class="button">Create Board {{boardName}}</button> 
 </mat-dialog-actions>

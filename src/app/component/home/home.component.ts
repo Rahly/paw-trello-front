@@ -56,18 +56,15 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(AddBoardDialogComponent, {
-      data: {
-        boardId: "My VAR", boardName: this.boardName
-      }
-    });
+    const dialogRef = this.dialog.open(AddBoardDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
+
+      this.loadBoards();
     });
   }
-
 
   openBoardComponent(boardId: number): void {
     const dialogRef = this.dialog.open(BoardComponent, {
