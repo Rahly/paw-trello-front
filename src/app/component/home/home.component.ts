@@ -4,6 +4,8 @@ import {MatDialog} from '@angular/material/dialog';
 import {BoardComponent} from '../board/board.component';
 import {BoardService} from 'src/app/service/board.service';
 import {Board} from "../../model/board";
+import { log } from 'util';
+import {Router} from '@angular/router'
 
 
 
@@ -21,9 +23,9 @@ import {Board} from "../../model/board";
 })
 export class HomeComponent implements OnInit {
   
-  @Output() boardData: EventEmitter<Board> = new EventEmitter();
+  @Output() boardData = new EventEmitter<number>();
   
-  constructor(public dialog: MatDialog, private boardService: BoardService) {
+  constructor(public dialog: MatDialog, private boardService: BoardService, private _router: Router) {
   }
 
   boardName: string;
@@ -46,12 +48,10 @@ export class HomeComponent implements OnInit {
       });
   }
   
-  onClick(): void {
-    const test: Board = {
-      id: 1,
-      name: 'Haha'
-    };
-    debugger;
+  onClick(index: number): void {
+    const test = index;
+    console.log("Index mojego boarda " + test)
+    
     this.boardData.emit(test);
   }
 
@@ -76,6 +76,11 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
 
     });
+  }
+
+  openBoard(boardId: number){
+    
+    this._router.navigate(['/board', boardId]);
   }
 
 }

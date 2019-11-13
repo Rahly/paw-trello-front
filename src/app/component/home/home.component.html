@@ -1,10 +1,10 @@
+
 <button (click)="openDialog()">Create new board</button>
 
-<div id="content">
-  <a routerLink="/board">
-    <button class="contentInside" (click)="onClick()" *ngFor="let divData of boardsName; index as i">{{divData}}</button>
-  </a>
+<div id="content" *ngFor="let divData of boardsName;  let i = index"[attr.data-index]="i">
+  <div (click)="openBoard(i)">
+    <button class="contentInside" (click)="onClick(i)" >{{i+1}} {{divData}}</button>
+  </div>
 </div>
-
 
 
