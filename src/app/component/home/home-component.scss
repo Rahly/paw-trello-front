@@ -1,8 +1,45 @@
+.boards-wrapper {
+  padding: 30px;
+  margin: 30px;
+  min-height: calc(100% - 4em);
+  display: block;
+}
 
-  .contentInside {
-    width: 100px;
-    height: 70px;
-    margin: 7px;
-    border: 1px solid black;
-    display: inline-flex;
-  }
+h2 { 
+  color: #333;
+  font-weight: 700; 
+  line-height: 20px;
+  font-size: 12pt;
+}
+
+.add-board {
+  height: 72px;
+  width: 280px;
+  background-color: #e2e4e6;
+  color: black;
+}
+
+.add-board .title-add-board {
+  font-weight: 700; 
+  line-height: 20px;
+  font-size: 12pt;
+}
+
+.contentInside .title {
+  font-weight: 700; 
+  line-height: 20px;
+  font-size: 12pt;
+}
+
+.contentInside {
+  background-color: #0079BF;
+  height: 72px;
+  width: 280px;
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+  padding: 9pt 8px;
+  border-radius: 3px;
+  text-decoration: none;
+}

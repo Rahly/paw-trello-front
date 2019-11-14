@@ -1,10 +1,21 @@
+<div class="boards-wrapper">
 
-<button (click)="openDialog()">Create new board</button>
-
-<div id="content" *ngFor="let divData of boardsName;  let i = index"[attr.data-index]="i">
-  <div (click)="openBoard(i)">
-    <button class="contentInside" (click)="onClick(i)" >{{i+1}} {{divData}}</button>
+<button mat-stroked-button class="add-board" (click)="openDialog()">
+  <div class="tittle-add-board">
+      Create new board
   </div>
+</button>
+
+<h2>Boards</h2>
+
+  <div id="content" *ngFor="let divData of boardsName;  let i = index"[attr.data-index]="i">
+  <div (click)="openBoard(i)">
+    <button mat-raised-button class="contentInside" (click)="onClick(i)" >
+        <span class="title">{{i+1}} {{divData}}</span>
+    </button>
+  </div>
+</div>
+
 </div>
 
 
