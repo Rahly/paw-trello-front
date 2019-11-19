@@ -73,8 +73,16 @@ header {
   .login-container {
     display: flex;
     flex-direction: column;
+    margin: 100px;
+    padding: 15px;
+    align-content: center;
   }
   
   .login-container > * {
     width: 100%;
   }
+
+#email, #password {
+  width: 500px;
+  height: 30px;
+}
