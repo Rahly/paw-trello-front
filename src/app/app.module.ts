@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
-import {MatButtonModule, MatCheckboxModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatTableModule, MatFormFieldModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { AddBoardDialogComponent } from './component/add-board-dialog/add-board-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -38,7 +38,9 @@ import { LoginComponent } from './component/login/login.component';
     MatTableModule,
     MatButtonModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
