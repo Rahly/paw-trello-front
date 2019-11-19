@@ -1,3 +1,81 @@
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+nav { 
+  background-color: #0067A3;
+  padding: 5px;
+  height: 30px;
+}
+
+nav a {
+  float: left;  
+  color: white; 
+}
+
+.center {
+  margin: auto;
+  width: 75%;
+  text-align: center;
+}
+
+.right-btns{
+margin-right: -15px;
+flex-direction: row-reverse;
+}
+
+
+#home-logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  transition: .1s ease;
+  background: hsla(0,0%,100%,.3);
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.home {
+  margin-right: 3px;
+}
+
+#boards-nav {
+  font-weight: 700;
+  color: white;
+}
+
+#boards-logo {
+  max-width: 16px;
+  max-height: 16px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  right: 7px  ;
+}
+
+.header-button {
+  transition: .1s ease;
+  background: hsla(0,0%,100%,.3);
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  float: left;
+  line-height: 32px;
+  margin-right: 4px;
+  min-width: 32px;
+  font-family: Helvetica;
+  padding-left: 20px;
+  padding-right: 6px;
+  font-size: 20px;
+}
+
 .boards-wrapper {
   padding: 30px;
   margin: 30px;

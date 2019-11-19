@@ -22,12 +22,6 @@ nav a {
   text-align: center;
 }
 
-.right-btns{
-margin-right: -15px;
-flex-direction: row-reverse;
-}
-
-
 #home-logo {
   width: 40px;
   height: 40px;
@@ -72,6 +66,37 @@ flex-direction: row-reverse;
   min-width: 32px;
   font-family: Helvetica;
   padding-left: 20px;
+  padding-right: 6px;
+  font-size: 20px;
+}
+
+.header-button-log {
+  transition: .1s ease;
+  background: hsla(0,0%,100%,.3);
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  float: left;
+  line-height: 32px;
+  min-width: 32px;
+  font-family: Helvetica;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 20px;
+}
+
+.header-button-sign {
+  transition: .1s ease;
+  background: hsla(120,100%,50%,0.3);
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  float: left;
+  line-height: 32px;
+  margin-right: 4px;
+  min-width: 32px;
+  font-family: Helvetica;
+  padding-left: 6px;
   padding-right: 6px;
   font-size: 20px;
 }

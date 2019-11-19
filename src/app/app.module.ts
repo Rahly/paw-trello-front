@@ -13,6 +13,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { BoardComponent } from './component/board/board.component';
 import { AddListDialogComponent } from './component/add-list-dialog/add-list-dialog.component';
+import { LoginComponent } from './component/login/login.component';
 
 
 
@@ -26,6 +27,7 @@ import { AddListDialogComponent } from './component/add-list-dialog/add-list-dia
     HomeComponent,
     BoardComponent,
     AddListDialogComponent,
+    LoginComponent,
   ],
   exports: [ AddBoardDialogComponent, BoardComponent ],
   imports: [

@@ -10,15 +10,17 @@
             <a class="center" href="#">
                 <img id="trello-logo" src="assets/img/trello.png" width="80" height="30" class="d-inline-block align-top" alt="">
             </a>
-                <a href="" id="login" class="header-button-log" routerLink="/login" routerLinkActive="active">
-                    Log in 
+            <a class="right-btns">
+                <a href="" id="home" class="header-button" routerLink="/home" routerLinkActive="active">
+                    Back 
                 </a>
-                <a href="" id="signup" class="header-button-sign">
-                    Sign Up
-                </a>
+            </a>
         </nav>
-    </header> 
-    
-   
-<router-outlet></router-outlet>
+</header> 
 
+<div class="login-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your email" formControl="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+</div>
