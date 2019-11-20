@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, Output, EventEmitter} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
-import { ListService } from '../../service/list.service';
+import { BoardService } from '../../service/board.service';
 import {List} from '../../model/list';
 import {Router, ActivatedRoute, Params } from '@angular/router'
 
@@ -13,7 +13,7 @@ import {Router, ActivatedRoute, Params } from '@angular/router'
 })
 export class AddListDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<AddListDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private listService: ListService,
+  constructor(public dialogRef: MatDialogRef<AddListDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private boardService: BoardService,
   private route: ActivatedRoute,
     private router: Router) {}
 
@@ -23,7 +23,7 @@ export class AddListDialogComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<string>();
 
   ngOnInit() {
-    console.log("Id czytassz");
+  console.log("Id czytassz");
 
    console.log(this.data.dataKey)
   }
@@ -32,7 +32,7 @@ export class AddListDialogComponent implements OnInit {
     console.log("Id boarda" + this.id);
     const list = new List();
     list.name = title;
-    this.listService.addList(Number(this.data.dataKey), list).subscribe(value => console.log(value), error1 => console.log(error1));
+    this.boardService.addList(Number(this.data.dataKey), list).subscribe(value => console.log(value), error1 => console.log(error1));
     this.dialogRef.close();
   }
 

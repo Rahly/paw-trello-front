@@ -1,0 +1,15 @@
+
+
+h2{
+    text-align: center;
+}
+
+.form-control{
+    height: 20px;
+    width: 400px;
+}
+
+.button{
+    text-align: center;
+    position: relative;
+}

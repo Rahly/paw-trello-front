@@ -1,0 +1,9 @@
+<h2 mat-dialog-ttile>Input board name:</h2>
+
+<mat-dialog-content>
+    <input #boardTitle type="text" class="form-control">
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)=setBoardName(boardTitle.value) class="button">Save Board name {{cardName}}</button> 
+</mat-dialog-actions>

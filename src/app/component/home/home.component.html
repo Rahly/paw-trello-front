@@ -29,10 +29,10 @@
 
 <h2>Boards</h2>
 
-  <div id="content" *ngFor="let divData of boardsName;  let i = index"[attr.data-index]="i">
-  <div (click)="openBoard(i)">
-    <button mat-raised-button class="contentInside" (click)="onClick(i)" >
-        <span class="title">{{i+1}} {{divData}}</span>
+  <div id="content" *ngFor="let divData of dataSource">
+  <div>
+    <button mat-raised-button class="contentInside" (click)="onClick(divData.id)" >
+        <span class="title">{{divData.name}}</span>
     </button>
   </div>
 </div>

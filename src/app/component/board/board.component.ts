@@ -1,10 +1,14 @@
-import {Component, OnInit, Input, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ListService} from 'src/app/service/list.service';
 import {List} from 'src/app/model/list';
 import {AddListDialogComponent} from '../add-list-dialog/add-list-dialog.component';
 import {Board} from "../../model/board";
 import {Router, ActivatedRoute, Params } from '@angular/router'
+import { AddCardDialogComponent } from '../add-card-dialog/add-card-dialog.component';
+import { Subscriber } from 'rxjs';
+import {BoardService} from 'src/app/service/board.service';
+import { ChangeBoardNameDialogComponent } from '../change-board-name-dialog/change-board-name-dialog.component';
 
 
 @Component({
@@ -18,36 +22,33 @@ import {Router, ActivatedRoute, Params } from '@angular/router'
 })
 export class BoardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private listService: ListService,  private route: ActivatedRoute,
-    private router: Router) {
+  constructor(public dialog: MatDialog, private listService: ListService,  private boardService: BoardService, private route: ActivatedRoute,
+    private router: ActivatedRoute) {
   }
 
-  listName: string;
   dataSource = [];
-  listsName = [];
+  listId: number;
 
-  id: number;
+
   ngOnInit() {
-
-    this.route.params.forEach((params: Params) => {
-      if (params['id'] !== undefined) {
-         this.id = +params['id'];
-      } 
-    });
-
-    this.loadLists(this.id);
+  this.listId = +this.route.snapshot.paramMap.get("id");
+  this.loadLists(this.listId);
   }
 
-  loadLists(id: number) {
-
-    this.listsName = [];
-    this.listService.getLists(id+1).subscribe(data => {
-        data.map(list => this.listsName.push(list.name))
+  loadLists(index: number) {
+    this.boardService.getLists(index).subscribe(data => {
         this.dataSource = data;
+        console.log(this.dataSource);
+
       },
       error => {
         console.log(error);
       });
+  }
+
+  loadCards(id: number){
+
+    
   }
 
   public eventEmitterMessage(msg: number): void {
@@ -57,7 +58,7 @@ export class BoardComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddListDialogComponent, {
       data: {
-        dataKey: this.id+1
+        dataKey: this.listId+1
       }
     });
 
@@ -65,19 +66,33 @@ export class BoardComponent implements OnInit {
       console.log('The dialog was closed');
       console.log(result);
       // this.receiveMessage($event)
-      console.log("Id odświeżany " + this.id)
+      console.log("Id odświeżany " + this.listId)
 
-      this.loadLists(this.id);
+      this.loadLists(this.listId);
     });
   }
 
-  receiveMessage($event) {
-    this.listName = $event;
-    console.log('Received event');
+  openAddCardDialog(): void{
+    const dialogRef = this.dialog.open(AddCardDialogComponent,{
+      data: {
+        dataKey: this.listId
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadCards(this.listId);
+    })
   }
 
-  boardData($event) {
-    
-    console.log('Received event ' + $event);
+  changeBoardName(): void{
+    const dialogRef = this.dialog.open(ChangeBoardNameDialogComponent,{
+      data: {
+        dataKey: this.listId
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadCards(this.listId);
+    })
   }
 }

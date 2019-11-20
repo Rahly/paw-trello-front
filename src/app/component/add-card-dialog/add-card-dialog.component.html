@@ -1,0 +1,9 @@
+<h2 mat-dialog-ttile>Add card name:</h2>
+
+<mat-dialog-content>
+    <input #cardTitle type="text" class="form-control">
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)=sendMessage(cardTitle.value) class="button">Create Card {{cardName}}</button> 
+</mat-dialog-actions>

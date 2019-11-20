@@ -1,4 +1,3 @@
-
 <header>
     <nav>
         <a href="#" class="home">
@@ -6,29 +5,34 @@
         </a>
         <a href="#" id="boards-nav" class="header-button" routerLink="/home" routerLinkActive="active">
             <img id="boards-logo" src="assets/img/board.png" class="d-inline-block align-top" alt="">
-                Boards
+            Boards
         </a>
         <a class="center" href="#">
-            <img id="trello-logo" src="assets/img/trello.png" width="80" height="30" class="d-inline-block align-top" alt="">
+            <img id="trello-logo" src="assets/img/trello.png" width="80" height="30" class="d-inline-block align-top"
+                alt="">
         </a>
         <a class="right-btns">
             <img id="add-btns" src="assets/img/add.PNG" alt="" height="30px" width="30px">
             <img id="info-btns" src="assets/img/info.PNG" alt="" height="30px" width="30px">
             <img id="noti-btns" src="assets/img/notification.PNG" alt="" height="30px" width="30px">
-            <img id="nb-btns" src="assets/img/nb.PNG" alt="" height="30px" width="30px">
+            <!--<img id="nb-btns" src="assets/img/nb.PNG" alt="" height="30px" width="30px"> -->
         </a>
     </nav>
-  </header> 
-            <!--<app-add-board-dialog (messageEvent)="receiveMessage($event)"></app-add-board-dialog>-->
+</header>
+<!--<app-add-board-dialog (messageEvent)="receiveMessage($event)"></app-add-board-dialog>-->
 
-<div class="board-wrapper">
-        <div class="board-columns" (data)="boardData($event)" >
-            <a class="board-column" routerLink="/board" *ngFor="let divData of listsName">
-                <div class="board-title"> 
-                    {{divData}}
-                </div>
-            </a>
-            <button mat-raised-button class="board-add-column" (click)="openDialog()">Create new list</button>
-        </div>
+<div class="board-wrapper" routerLink="/board" *ngFor="let divData of dataSource">
+    <button mat-raised-button class="board-name" (click)="changeBoardName()"> {{divData.name}} </button>
+    <div class="board-columns" (data)="boardData($event)">
+        <a class="board-column" routerLink="/board" *ngFor="let divData of dataSource">
+            <div class="board-title">
+                {{divData.name}} 
+            </div>
+             <button class="board-add-card" (click)="openAddCardDialog()">
+                 Add new card
+             </button>
+        </a>
+        <button mat-raised-button class="board-add-column" (click)="openDialog()">Create new list</button>
+    </div>
+    
 </div>
-

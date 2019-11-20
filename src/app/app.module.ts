@@ -14,6 +14,8 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { BoardComponent } from './component/board/board.component';
 import { AddListDialogComponent } from './component/add-list-dialog/add-list-dialog.component';
 import { LoginComponent } from './component/login/login.component';
+import { AddCardDialogComponent } from './component/add-card-dialog/add-card-dialog.component';
+import { ChangeBoardNameDialogComponent } from './component/change-board-name-dialog/change-board-name-dialog.component';
 
 
 
@@ -28,6 +30,8 @@ import { LoginComponent } from './component/login/login.component';
     BoardComponent,
     AddListDialogComponent,
     LoginComponent,
+    AddCardDialogComponent,
+    ChangeBoardNameDialogComponent,
   ],
   exports: [ AddBoardDialogComponent, BoardComponent ],
   imports: [
@@ -48,7 +52,7 @@ import { LoginComponent } from './component/login/login.component';
     { provide: MAT_DIALOG_DATA, useValue: [] },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AddBoardDialogComponent, BoardComponent, AddListDialogComponent],
+  entryComponents: [AddBoardDialogComponent, BoardComponent, AddListDialogComponent, AddCardDialogComponent, ChangeBoardNameDialogComponent],
   
 
 })

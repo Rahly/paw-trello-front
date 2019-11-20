@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   boardName: string;
   dataSource = [];
-  boardsName = [];
+
 
   ngOnInit() {
     this.loadBoards();
@@ -38,9 +38,7 @@ export class HomeComponent implements OnInit {
 
 
   loadBoards() {
-    this.boardsName = [];
     this.boardService.getBoards().subscribe(data => {
-        data.map(board => this.boardsName.push(board.name));
         this.dataSource = data;
       },
       error => {
@@ -49,10 +47,9 @@ export class HomeComponent implements OnInit {
   }
   
   onClick(index: number): void {
-    const test = index;
-    console.log("Index mojego boarda " + test)
-    
-    this.boardData.emit(test);
+    console.log("Index mojego boarda " + index)
+    this.openBoard(index);
+    this.boardData.emit(index);
   }
 
   openDialog(): void {
