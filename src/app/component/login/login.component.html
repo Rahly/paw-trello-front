@@ -20,20 +20,14 @@
 
 <div class="login-container">
     <h1>E-mail</h1>
-    <input type="text" id="email" formControl="email" class="form-control" placeholder="E-mail" [ngClass]="{ 'is-invalid': submitted && l.email.errors }" />
-    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-        <div *ngIf="f.email.errors.required">Email is required</div>
-        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-    </div>
+    <input type="text" id="email" placeholder="E-mail" />
+   
 
     <h1>Password</h1>
-    <input type="password" id="password" formControl="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && l.password.errors }" />
-    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-        <div *ngIf="f.password.errors.required">Password is required</div>
-        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-    </div>
+    <input type="password" id="password" placeholder="Password" />
+    
 
     <div class="form-group">
-            <button class="btn btn-primary">Login</button>
+            <button mat-raised-button>Login</button>
     </div>
 </div>
