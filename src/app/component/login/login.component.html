@@ -11,7 +11,7 @@
                 <img id="trello-logo" src="assets/img/trello.png" width="80" height="30" class="d-inline-block align-top" alt="">
             </a>
             <a class="right-btns">
-                <a href="" id="home" class="header-button" routerLink="/home" routerLinkActive="active">
+                <a href="" id="home" class="header-button" routerLink="/" routerLinkActive="active">
                     Back 
                 </a>
             </a>
@@ -19,8 +19,15 @@
 </header> 
 
 <div class="login-container">
-        <mat-form-field>
-          <input matInput placeholder="Enter your email" formControl="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
+    <h1>E-mail</h1>
+    <input type="text" id="email" placeholder="E-mail" />
+   
+
+    <h1>Password</h1>
+    <input type="password" id="password" placeholder="Password" />
+    
+
+    <div class="form-group">
+            <button mat-raised-button>Login</button>
+    </div>
 </div>
