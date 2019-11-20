@@ -1,0 +1,39 @@
+<header>
+    <nav>
+        <a href="#" class="home">
+            <img id="home-logo" src="assets/img/home.png" class="d-inline-block align-top" alt="">
+        </a>
+        <a href="#" id="boards-nav" class="header-button" routerLink="/home" routerLinkActive="active">
+            <img id="boards-logo" src="assets/img/board.png" class="d-inline-block align-top" alt="">
+            Boards
+        </a>
+        <a class="center" href="#">
+            <img id="trello-logo" src="assets/img/trello.png" width="80" height="30" class="d-inline-block align-top" alt="">
+        </a>
+            <a href="" id="login" class="header-button-log" routerLink="/login" routerLinkActive="active">
+                Log in 
+            </a>
+            <a href="" id="signup" class="header-button-sign" routerLink="/register" routerLinkActive="active">
+                Sign Up
+            </a>
+    </nav>
+</header>
+
+<div class="container">
+<div class="left-container">
+    <h1>
+        Trello lets you work more collaboratively and get more done.
+    </h1>
+    <p>
+        Trello’s boards, lists, and cards enable you to organize and prioritize your projects in a fun, flexible, and rewarding way.
+    </p>
+    <button mat-raised-button routerLink="/register" routerLinkActive="active" color="success">Sign Up - It's free!</button>
+</div>
+<div class="right-container">
+    <img id="start" src="assets/img/start.PNG"> 
+</div>
+</div>
+
+
+<router-outlet></router-outlet>
+

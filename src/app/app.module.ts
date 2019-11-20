@@ -6,7 +6,7 @@ import {MatButtonModule, MatCheckboxModule, MatTableModule, MatFormFieldModule} 
 import { AppComponent } from './app.component';
 import { AddBoardDialogComponent } from './component/add-board-dialog/add-board-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -16,9 +16,8 @@ import { AddListDialogComponent } from './component/add-list-dialog/add-list-dia
 import { LoginComponent } from './component/login/login.component';
 import { AddCardDialogComponent } from './component/add-card-dialog/add-card-dialog.component';
 import { ChangeBoardNameDialogComponent } from './component/change-board-name-dialog/change-board-name-dialog.component';
-
-
-
+import { RegisterComponent } from './component/register/register.component';
+import { StartPageComponent } from './component/start-page/start-page.component';
 
 
 @NgModule({
@@ -32,6 +31,8 @@ import { ChangeBoardNameDialogComponent } from './component/change-board-name-di
     LoginComponent,
     AddCardDialogComponent,
     ChangeBoardNameDialogComponent,
+    RegisterComponent,
+    StartPageComponent,
   ],
   exports: [ AddBoardDialogComponent, BoardComponent ],
   imports: [
